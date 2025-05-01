@@ -8,11 +8,20 @@ export default createConfig({
       transport: http(process.env.PONDER_RPC_URL_1),
     },
   },
-  blocks: {
-    ChainlinkPriceOracle: {
+  accounts: {
+    vitalikDotEth: {
+      startBlock: 7616805,
+      endBlock: 9616805,
       network: "mainnet",
-      startBlock: 19_750_000,
-      interval: 5, // every minute
+      address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+    },
+  },
+  blocks: {
+    everyBlock: {
+      network: "mainnet",
+      startBlock: 7616805,
+      endBlock: 9616805,
+      interval: 1000,
     },
   },
 });

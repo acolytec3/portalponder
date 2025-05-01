@@ -1,6 +1,10 @@
 import { onchainTable } from "ponder";
 
-export const chainlinkPrice = onchainTable("chainlink_price", (t) => ({
+export const accountBalance = onchainTable("web3ninja_balance", (t) => ({
   timestamp: t.bigint().primaryKey(),
-  price: t.doublePrecision().notNull(),
+  balance: t.doublePrecision().notNull(),
+}));
+export const blocks = onchainTable("blocks", (t) => ({
+  number: t.bigint().primaryKey(),
+  timestamp: t.bigint().notNull(),
 }));
